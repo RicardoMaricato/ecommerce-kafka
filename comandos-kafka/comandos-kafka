@@ -20,3 +20,13 @@ bin/kafka-topics.sh --list --bootstrap-server localhost:9092
 -Indicando consumer para o tópico
 
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic ECOMMERCE_NEW_ORDER --from-beginning
+
+-Vendo configuralções do server.properties:
+
+vi config/server.properties
+
+-Alterando as partições do tópico:
+
+1. Ir na pasta do kafka;
+2. bin/kafka-topics.sh --alter --zookeeper localhost:2181 --topic ECOMMERCE_NEW_ORDER --partitions (número de partições)
+
