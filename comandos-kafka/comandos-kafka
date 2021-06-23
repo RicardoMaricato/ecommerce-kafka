@@ -30,3 +30,7 @@ vi config/server.properties
 1. Ir na pasta do kafka;
 2. bin/kafka-topics.sh --alter --zookeeper localhost:2181 --topic ECOMMERCE_NEW_ORDER --partitions (número de partições)
 
+-Analisando todos os grupos consumidores em tempo real:
+
+1.Ir no terminal onde está processando o consumer;
+2. bin/kafka-consumer-groups.sh --all-groups --bootstrap-server localhost:9092 --describe
