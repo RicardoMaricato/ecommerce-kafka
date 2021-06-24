@@ -21,7 +21,7 @@ bin/kafka-topics.sh --list --bootstrap-server localhost:9092
 
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic ECOMMERCE_NEW_ORDER --from-beginning
 
--Vendo configuralções do server.properties:
+-Vendo configurações do server.properties:
 
 vi config/server.properties
 
@@ -34,3 +34,15 @@ vi config/server.properties
 
 1.Ir no terminal onde está processando o consumer;
 2. bin/kafka-consumer-groups.sh --all-groups --bootstrap-server localhost:9092 --describe
+
+-Guardando os dados do Kafka e do Zookeeper em uma pasta na sua máquina:
+
+1.Crie a pasta "data" e e dentro dela crie "kafka" e "zookeeper";
+2.Vá dentro da pasta do kafka onde tem a pasta "config";
+3.vi config/server.properties
+4.Procure onde está directories "log.dirs=(pasta que esta gravando atualmente)"
+5.Modifique colocando o caminho começando com "/.../data/kafka"
+6.vi config/zookeeper.properties
+7.Procure onde está directory "dataDir=(pasta que esta gravando os dados)"
+8.Modifique colocando o caminho começando com "/.../data/zookeeper"
+
